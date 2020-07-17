@@ -6,9 +6,16 @@ from collections import namedtuple
 Item = namedtuple('Item', ['index', 'size', 'value'])
 
 def knapsack_solver(items, capacity):
-    # Your code here
-
-    pass
+  items.sort(key= lambda x: x.value, reverse=True)
+  count = 0 
+  for item in items:
+    count += capacity
+    if count > 50:
+      return capacity
+    else:
+      capacity.append(item)
+  return capacity
+    
 
 
 if __name__ == '__main__':

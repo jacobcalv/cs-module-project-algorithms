@@ -2,14 +2,25 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+
+
 def moving_zeroes(arr):
     # Your code here
+    start = 0
+    end = len(arr) -1
 
-    pass
+    for i in range(start, end):
+        for j in range(start, end):
+            if arr[j] == 0:
+                original_num = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = original_num
+
+    return arr
 
 
-if __name__ == '__main__':
-    # Use the main function here to test out your implementation
-    arr = [0, 3, 1, 0, -2]
+# if __name__ == '__main__':
+#     # Use the main function here to test out your implementation
+#     arr = [0, 3, 1, 0, -2]
 
-    print(f"The resulting of moving_zeroes is: {moving_zeroes(arr)}")
+#     print(f"The resulting of moving_zeroes is: {moving_zeroes(arr)}")
